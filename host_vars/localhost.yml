@@ -1,0 +1,57 @@
+openstack_servers:
+
+  - instance_name: app1
+    group: app_servers
+    state: present
+    image: rhel-guest
+    key_name: ansible_ssh_key
+    flavor: m2.medium
+    deployment: QA
+    security_group_name: apps
+    net_name: int_network
+    ext_network: ext_network
+    ext_network_state: present
+    ext_network_reuse: false
+    delete_fip: true
+
+  - instance_name: app2
+    group: app_servers
+    state: present
+    image: rhel-guest
+    key_name: ansible_ssh_key
+    flavor: m2.medium
+    deployment: dev
+    security_group_name: apps
+    net_name: int_network
+    ext_network: ext_network
+    ext_network_state: present
+    ext_network_reuse: false
+    delete_fip: true
+
+  - instance_name: db
+    group: database_servers
+    state: present
+    image: rhel-guest
+    key_name: ansible_ssh_key
+    flavor: m2.medium
+    deployment: dev
+    security_group_name: db
+    net_name: int_network
+    ext_network: ext_network
+    ext_network_state: present
+    ext_network_reuse: false
+    delete_fip: true
+
+  - instance_name: frontend
+    group: load_balancers
+    state: present
+    image: rhel-guest
+    key_name: ansible_ssh_key
+    flavor: m2.medium
+    deployment: dev
+    security_group_name: frontend
+    net_name: int_network
+    ext_network: ext_network
+    ext_network_state: present
+    ext_network_reuse: false
+    delete_fip: true
