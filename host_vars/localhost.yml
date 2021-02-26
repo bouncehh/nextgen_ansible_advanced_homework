@@ -5,7 +5,7 @@ openstack_servers:
     state: present
     image: rhel-guest
     key_name: ansible_ssh_key
-    flavor: m2.medium
+    flavor: m1.medium
     deployment: QA
     security_group_name: apps
     net_name: int_network
@@ -19,7 +19,7 @@ openstack_servers:
     state: present
     image: rhel-guest
     key_name: ansible_ssh_key
-    flavor: m2.medium
+    flavor: m1.medium
     deployment: dev
     security_group_name: apps
     net_name: int_network
@@ -33,7 +33,7 @@ openstack_servers:
     state: present
     image: rhel-guest
     key_name: ansible_ssh_key
-    flavor: m2.medium
+    flavor: m1.medium
     deployment: dev
     security_group_name: db
     net_name: int_network
@@ -47,7 +47,7 @@ openstack_servers:
     state: present
     image: rhel-guest
     key_name: ansible_ssh_key
-    flavor: m2.medium
+    flavor: m1.medium
     deployment: dev
     security_group_name: frontend
     net_name: int_network
