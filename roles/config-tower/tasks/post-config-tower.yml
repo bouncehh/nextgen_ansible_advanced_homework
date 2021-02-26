@@ -1,5 +1,16 @@
 - name: Create Homework Assignment project
-
+  tower_project:
+    name: "00_Homework Assignment"
+    description: "00_Homework Assignment"
+    organization: "Default"
+    state: present
+    scm_type: git
+    scm_url: https://github.com/bouncehh/nextgen_ansible_advanced_homework.git
+#    tower_config_file: "~/.tower_cli.cfg"
+    tower_host: tower1.{{tower_GUID}}.example.opentlc.com
+    tower_username: admin
+    tower_password: r3dh4t1!
+    tower_verify_ssl: no
 
 - name: Machine Credentail to connect to workstation using openstack.pub
   tower_credential:

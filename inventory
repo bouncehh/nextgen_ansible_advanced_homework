@@ -1,0 +1,37 @@
+[tower]
+tower2.44f5.internal
+tower1.44f5.internal
+tower3.44f5.internal
+
+[database]
+db2.44f5.internal
+
+[all:vars]
+ansible_become=true
+admin_password="2itUpEyu69wV"
+
+pg_host='db2.44f5.internal'
+pg_port='5432'
+pg_database='awx'
+pg_username='awx'
+pg_password="2itUpEyu69wV"
+
+rabbitmq_port=5672
+rabbitmq_vhost=tower
+rabbitmq_username=tower
+rabbitmq_password="2itUpEyu69wV"
+rabbitmq_cookie=cookiemonster
+rabbitmq_use_long_name=true
+
+ansible_user=cloud-user 
+ansible_ssh_private_key_file=~/.ssh/openstack.pem 
+
+[dbs]
+db2.44f5.internal
+db1.44f5.internal
+# BEGIN ANSIBLE MANAGED BLOCK
+[isolated_group_osp]
+workstation-3a6f.dynamic.opentlc.com ansible_user='cloud-user' ansible_ssh_private_key_file='~/.ssh/openstack.pem' ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+[isolated_group_osp:vars]
+controller=tower
+# END ANSIBLE MANAGED BLOCK
