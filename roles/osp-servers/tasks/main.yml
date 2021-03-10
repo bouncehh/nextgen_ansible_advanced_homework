@@ -53,7 +53,7 @@
         server: "{{ __instance.__openstack_server.instance_name }}"
         network: ext_network
         wait: true
-        timeout: 600
+        timeout: 3000
       loop: "{{ r_instances.results }}"
       loop_control:
         loop_var: __instance
@@ -64,7 +64,7 @@
         host: "{{ __fip.floating_ip.floating_ip_address }}"
         port: 22
         search_regex: OpenSSH
-        timeout: 600
+        timeout: 3000
       loop: "{{ r_floating_ips.results }}"
       loop_control:
         loop_var: __fip
