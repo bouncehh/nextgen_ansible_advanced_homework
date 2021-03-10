@@ -17,7 +17,8 @@
       #!/bin/bash
       curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
       cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
-
+      curl -o /tmp/openstack.pem http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pem
+      cat /tmp/openstack.pem >> /home/cloud-user/.ssh/authorized_keys
   loop: "{{ openstack_servers }}"      
   loop_control:
     loop_var: __openstack_server
